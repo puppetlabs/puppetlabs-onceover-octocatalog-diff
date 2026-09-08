@@ -54,12 +54,11 @@ revisions to compare between.
                     # Copy all of the factsets over in reverse order so that
                     # local ones override vendored ones
                     logger.debug "Deploying vendored factsets"
-                    deduped_factsets = repo.facts_files.reverse.inject({}) do |hash, file|
-                      hash[File.basename(file)] = file
-                      hash
+                    deduped_factsets = repo.facts_files.reverse.to_h do |file|
+                      [File.basename(file), file]
                     end
 
-                    deduped_factsets.each do |basename,path|
+                    deduped_factsets.each_value do |path|
                       facts = JSON.load(File.read(path))
                       File.open("#{tempdir}/spec/factsets/#{File.basename(path,'.*')}.yaml", 'w') { |f| f.write facts.to_yaml }
                     end

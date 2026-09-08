@@ -6,7 +6,6 @@ require "puppetlabs-onceover/octocatalog-diff/cli"
 class PuppetlabsOnceover
   module Octocatalog
     module Diff
-
     end
   end
 end

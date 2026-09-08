@@ -7,6 +7,15 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
+# Permanent exclusion, not a todo: this filename must literally match
+# puppetlabs-onceover's plugin loader require path
+# (gem_name.sub('puppetlabs-onceover-', 'puppetlabs-onceover/')), so it can
+# never be renamed to snake_case.
+Naming/FileName:
+  Exclude:
+    - 'lib/puppetlabs-onceover/octocatalog-diff.rb'
+
+# Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Layout/HeredocIndentation:
   Exclude:

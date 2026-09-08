@@ -6,5 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
+  gem 'bundler', '~> 2.4'
+  gem 'rake', '~> 13.3'
   gem 'rubocop'
 end
