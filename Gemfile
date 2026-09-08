@@ -4,7 +4,7 @@
 gemsource_default = ENV['GEM_SOURCE'] || 'https://rubygems.org'
 gemsource_puppetcore = if ENV['GEM_SOURCE']
                          gemsource_default
-                       elsif ENV['PUPPET_FORGE_TOKEN']
+                       elsif ENV['PUPPET_FORGE_TOKEN'] && !ENV['PUPPET_FORGE_TOKEN'].empty?
                          'https://rubygems-puppetcore.puppet.com'
                        else
                          ENV['GEM_SOURCE_PUPPETCORE'] || gemsource_default
