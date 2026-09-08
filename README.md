@@ -1,6 +1,6 @@
 # Octocatalog-diff Onceover plugin
 
-This plugin adds the `onceover run diff` command to onceover. Instead of testing that all if your catalogs compile, it compiles two versions of each catalog and returns you the differences. This is great for ensuring that changed that you were intending to make have had the desired effect and scope.
+This plugin adds the `run diff` command to [puppetlabs-onceover](https://github.com/puppetlabs/puppetlabs-onceover). Instead of testing that all if your catalogs compile, it compiles two versions of each catalog and returns you the differences. This is great for ensuring that changed that you were intending to make have had the desired effect and scope.
 
 Kudos to Kevin and the team at GitHub for actually building [octocatalog-diff](https://github.com/github/octocatalog-diff)!
 
