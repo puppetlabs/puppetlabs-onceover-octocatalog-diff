@@ -37,7 +37,6 @@ platforms :mingw, :x64_mingw, :mswin do
 end
 
 group :development do
-  gem 'bundler', '~> 2.4'
   gem 'rake', '~> 13.3'
   gem 'rubocop'
 end
