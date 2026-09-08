@@ -35,3 +35,7 @@ platforms :mingw, :x64_mingw, :mswin do
   gem 'ffi', '>= 1.15.5', '< 1.17.0', '!= 1.16.0', '!= 1.16.1', '!= 1.16.2'
   gem 'win32ole', '>= 1.8', '< 2.0'
 end
+
+group :development do
+  gem 'rubocop'
+end
