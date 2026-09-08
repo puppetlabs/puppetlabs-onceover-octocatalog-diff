@@ -10,20 +10,20 @@
 # This cop supports safe autocorrection (--autocorrect).
 Layout/HeredocIndentation:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: AllowDoxygenCommentStyle, AllowGemfileRubyComment.
 Layout/LeadingCommentSpace:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 11
 # This cop supports safe autocorrection (--autocorrect).
 Layout/SpaceAfterComma:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
@@ -32,27 +32,27 @@ Layout/SpaceAfterComma:
 # SupportedStylesForEmptyBraces: space, no_space
 Layout/SpaceInsideBlockBraces:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: AllowInHeredoc.
 Layout/TrailingWhitespace:
   Exclude:
-    - 'lib/onceover/octocatalog/diff.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 Lint/ErbNewArguments:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
 Lint/UnusedBlockArgument:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
@@ -90,13 +90,13 @@ Metrics/PerceivedComplexity:
 # SupportedStylesForLeadingUnderscores: disallowed, required, optional
 Naming/MemoizedInstanceVariableName:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
 Security/JSONLoad:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 2
 # Configuration parameters: AllowedConstants.
@@ -104,26 +104,26 @@ Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    - 'lib/onceover/octocatalog/diff.rb'
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Style/EachWithObject:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Style/FileWrite:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
 Style/GlobalStdStream:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 4
 # This cop supports safe autocorrection (--autocorrect).
@@ -133,7 +133,7 @@ Style/GlobalStdStream:
 Style/HashSyntax:
   Exclude:
     - 'Rakefile'
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -142,13 +142,13 @@ Style/HashSyntax:
 Style/NumericPredicate:
   Exclude:
     - 'spec/**/*'
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Style/StderrPuts:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 12
 # This cop supports safe autocorrection (--autocorrect).
@@ -156,8 +156,8 @@ Style/StderrPuts:
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
   Exclude:
-    - 'lib/onceover/octocatalog/diff.rb'
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 10
 # This cop supports safe autocorrection (--autocorrect).
@@ -165,7 +165,7 @@ Style/StringLiterals:
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiteralsInInterpolation:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
@@ -173,7 +173,7 @@ Style/StringLiteralsInInterpolation:
 # SupportedStylesForMultiline: comma, consistent_comma, no_comma
 Style/TrailingCommaInHashLiteral:
   Exclude:
-    - 'lib/onceover/octocatalog/diff/cli.rb'
+    - 'lib/puppetlabs-onceover/octocatalog-diff/cli.rb'
 
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).

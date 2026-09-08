@@ -9,7 +9,7 @@ Kudos to Kevin and the team at GitHub for actually building [octocatalog-diff](h
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'onceover-octocatalog-diff'
+gem 'puppetlabs-onceover-octocatalog-diff'
 ```
 
 And then execute:
@@ -18,17 +18,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install onceover-octocatalog-diff
+    $ gem install puppetlabs-onceover-octocatalog-diff
 
 ## Usage
 
-`onceover run diff --from development --to production`
+`puppetlabs-onceover run diff --from development --to production`
 
-All config follows the normal [onceover](https://github.com/dylanratcliffe/onceover) configuration.
+All config follows the normal [onceover](https://github.com/puppetlabs/puppetlabs-onceover) configuration.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/dylanratcliffe/onceover-octocatalog-diff.
+Bug reports and pull requests are welcome on GitHub at https://github.com/puppetlabs/puppetlabs-onceover-octocatalog-diff.
 
 
 ## License
