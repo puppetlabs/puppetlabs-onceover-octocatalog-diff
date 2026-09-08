@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Onceover
+class PuppetlabsOnceover
   module Octocatalog
     module Diff
       VERSION = '0.1.9'

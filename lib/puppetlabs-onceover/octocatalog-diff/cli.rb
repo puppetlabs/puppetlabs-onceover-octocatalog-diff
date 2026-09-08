@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Onceover
+class PuppetlabsOnceover
   class CLI
     class Run
       class Diff
@@ -23,10 +23,10 @@ revisions to compare between.
               require 'colored'
 
               #TODO: Allow for custom arguments
-              repo        = Onceover::Controlrepo.new(opts)
-              test_config = Onceover::TestConfig.new(repo.onceover_yaml, opts)
+              repo        = PuppetlabsOnceover::Controlrepo.new(opts)
+              test_config = PuppetlabsOnceover::TestConfig.new(repo.onceover_yaml, opts)
               num_threads = (Facter.value('processors')['count'] / 2)
-              tests = test_config.run_filters(Onceover::Test.deduplicate(test_config.spec_tests))
+              tests = test_config.run_filters(PuppetlabsOnceover::Test.deduplicate(test_config.spec_tests))
 
               @queue = tests.inject(Queue.new, :push)
               @results = []
@@ -54,12 +54,11 @@ revisions to compare between.
                     # Copy all of the factsets over in reverse order so that
                     # local ones override vendored ones
                     logger.debug "Deploying vendored factsets"
-                    deduped_factsets = repo.facts_files.reverse.inject({}) do |hash, file|
-                      hash[File.basename(file)] = file
-                      hash
+                    deduped_factsets = repo.facts_files.reverse.to_h do |file|
+                      [File.basename(file), file]
                     end
 
-                    deduped_factsets.each do |basename,path|
+                    deduped_factsets.each_value do |path|
                       facts = JSON.load(File.read(path))
                       File.open("#{tempdir}/spec/factsets/#{File.basename(path,'.*')}.yaml", 'w') { |f| f.write facts.to_yaml }
                     end
@@ -83,7 +82,7 @@ revisions to compare between.
                     # TODO: Improve the way this works so that it doesn't blat site.pp
                     logger.debug "Creating before script that overwrites site.pp"
                     class_name = test.classes[0].name
-                    template_dir = File.expand_path('../../../../templates',File.dirname(__FILE__))
+                    template_dir = File.expand_path('../../../templates',File.dirname(__FILE__))
                     template = File.read(File.expand_path("./change_manifest.rb.erb",template_dir))
                     File.write("#{tempdir}/bootstrap_script.rb",ERB.new(template, nil, '-').result(binding))
                     FileUtils.chmod("u=rwx","#{tempdir}/bootstrap_script.rb")
@@ -161,4 +160,4 @@ revisions to compare between.
 end
 
 # Register itself
-Onceover::CLI::Run.command.add_command(Onceover::CLI::Run::Diff.command)
+PuppetlabsOnceover::CLI::Run.command.add_command(PuppetlabsOnceover::CLI::Run::Diff.command)

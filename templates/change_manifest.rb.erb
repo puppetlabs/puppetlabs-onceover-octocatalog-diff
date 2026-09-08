@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'onceover/controlrepo'
+require 'puppetlabs-onceover/controlrepo'
 
-repo = Onceover::Controlrepo.new()
+repo = PuppetlabsOnceover::Controlrepo.new()
 tempdir = Dir.pwd
 
 FileUtils.copy_entry("<%= tempdir %>/modules","#{tempdir}/modules")
