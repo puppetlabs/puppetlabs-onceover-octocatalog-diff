@@ -1,17 +1,9 @@
----
-name: "ci"
+name: "nightly"
 
 on:
-  push:
-    branches:
-      - "main"
-  pull_request:
-    branches:
-      - "main"
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
-
-env:
-  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
 jobs:
   spec:
@@ -30,8 +22,7 @@ jobs:
           - "ubuntu-latest"
           - "macos-latest"
           - "ubuntu-24.04-arm"
-    # NOTE: windows-latest is a separate, bespoke job below -- see
-    # spec-windows for why (matches puppetlabs-onceover's own ci.yml pattern).
+    # See ci.yaml's spec-windows job for the separate Windows lane.
     name: "spec (${{ matrix.runs_on }} ruby ${{ matrix.ruby_version }} | puppet ${{ matrix.puppet_gem_version }})"
     uses: "puppetlabs/cat-github-actions/.github/workflows/gem_ci.yml@main"
     secrets: "inherit"
@@ -69,26 +60,3 @@ jobs:
         run: bundle exec rubocop --format github
       - name: "spec"
         run: bundle exec rake spec
-
-  build:
-    needs: "spec"
-    runs-on: "ubuntu-latest"
-    name: "Verify gem builds"
-    steps:
-      - uses: "actions/checkout@v4"
-      - uses: "ruby/setup-ruby@v1"
-        with:
-          ruby-version: "3.4"
-          bundler-cache: true
-      - name: "Verify gem builds"
-        run: "gem build --strict --verbose *.gemspec"
-
-  tests:
-    needs:
-      - "spec"
-      - "spec-windows"
-      - "build"
-    runs-on: "ubuntu-latest"
-    name: "Test suite"
-    steps:
-      - run: "echo Test suite completed"

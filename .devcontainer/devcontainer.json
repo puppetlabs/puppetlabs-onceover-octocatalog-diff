@@ -1,5 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-	"name": "VoxBox",
-	"image": "ghcr.io/voxpupuli/voxbox:latest"
+	"name": "Debian",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/ruby:3.2",
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	}
 }
