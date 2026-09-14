@@ -84,7 +84,7 @@ revisions to compare between.
                     class_name = test.classes[0].name
                     template_dir = File.expand_path('../../../templates',File.dirname(__FILE__))
                     template = File.read(File.expand_path("./change_manifest.rb.erb",template_dir))
-                    File.write("#{tempdir}/bootstrap_script.rb",ERB.new(template, nil, '-').result(binding))
+                    File.write("#{tempdir}/bootstrap_script.rb",ERB.new(template, trim_mode: '-').result(binding))
                     FileUtils.chmod("u=rwx","#{tempdir}/bootstrap_script.rb")
 
                     logger.debug "Getting Puppet binary"

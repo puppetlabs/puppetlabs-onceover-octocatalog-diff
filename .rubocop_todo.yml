@@ -55,8 +55,15 @@ Metrics/AbcSize:
 # Offense count: 4
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
 # AllowedMethods: refine
+# cli_spec.rb's outer `RSpec.describe` block is a narrow, deliberate addition
+# (not machine-generated): it exercises every branch of cli.rb's single
+# 163-line inline `run` block (all three octocatalog-diff exit codes, both
+# r10k exit-status branches, and the module-cache hit/miss branch), which
+# means many small `it` blocks living under one `describe`/`context` nest.
 Metrics/BlockLength:
   Max: 120
+  Exclude:
+    - 'spec/puppetlabs-onceover/octocatalog-diff/cli_spec.rb'
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
@@ -87,10 +94,15 @@ Metrics/PerceivedComplexity:
 # loader require path (gem_name.sub('puppetlabs-onceover-', 'puppetlabs-onceover/')),
 # so it can never be renamed to snake_case. 'Rakefile.rb' here is just
 # rubocop's own normalized display name for the real 'Rakefile'.
+# 'spec/puppetlabs-onceover/octocatalog-diff_spec.rb' is the same permanent
+# exclusion, mirrored into spec/: rspec's own convention names a lib file's
+# spec by appending '_spec' to its exact basename, so this file's name is
+# forced to inherit the hyphen too.
 Naming/FileName:
   Exclude:
     - 'Rakefile.rb'
     - 'lib/puppetlabs-onceover/octocatalog-diff.rb'
+    - 'spec/puppetlabs-onceover/octocatalog-diff_spec.rb'
 
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
